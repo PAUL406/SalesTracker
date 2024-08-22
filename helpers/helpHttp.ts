@@ -1,13 +1,14 @@
 export const helpHttp = () => {
-	const customFetch = async (endpoint: string, options: Record<string, any>) => {
-		const defaultHeader = {
-			accept: "application/json",
+	const customFetch = (endpoint: string, options: Record<string, any>) => {
+		const defaultHeaders = {
+			// accept: "application/json",
+			"Content-Type": "application/json",
 		};
 		const controller = new AbortController();
 		options.signal = controller.signal;
 		options.method = options.method || "GET"; //  "falsy" ( null, undefined, 0, "", false, etc.)
 		// options.method ?? "get" //null or undefined
-		options.header = options.header ? { ...defaultHeader, ...options.header } : defaultHeader;
+		options.headers = options.headers ? { ...defaultHeaders, ...options.headers } : defaultHeaders;
 
 		options.body = JSON.stringify(options.body) || false;
 

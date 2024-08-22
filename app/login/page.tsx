@@ -13,7 +13,6 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
 	const router = useRouter();
-	router.push("/login");
 	const [inputEmail, setInputEmail] = useState("");
 	const [inputPassword, setInputPassword] = useState("");
 	const validateEmail = (value: string) =>
@@ -27,16 +26,28 @@ export default function Home() {
 
 	const isPasswordInvalid = React.useMemo(() => {
 		if (inputPassword === "") return false;
-		console.log(inputPassword);
 		return inputPassword.length < 8 && inputPassword.length <= 32;
 	}, [inputPassword]);
 
-	const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
 		let api = helpHttp();
-		let response = api.post(`${apiUrls.main}/login`, {
+		let response = await api.post(`${apiUrls.main}/login`, {
 			body: { email: inputEmail, password: inputPassword },
 		});
-		// console.log(response);
+
+		if (response.value) {
+			console.log(response);
+
+			localStorage.setItem("authToken", JSON.stringify(response));
+			let lol = localStorage.getItem("authToken");
+			console.log(lol);
+			console.log("asdasdasdasdasd");
+
+			// Redirigir al dashboard usando useRouter
+			router.push("/dashboard");
+		} else {
+			console.log("Error al iniciar sesión");
+		}
 	};
 
 	return (
