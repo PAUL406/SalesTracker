@@ -5,7 +5,7 @@ import { Input } from "@nextui-org/input";
 
 import { Button } from "@nextui-org/button";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Divider } from "@nextui-org/divider";
 import { helpHttp } from "@/helpers/helpHttp";
 import { apiUrls } from "@/app/config/api-url-context";
@@ -17,6 +17,16 @@ export default function Home() {
 	const [inputPassword, setInputPassword] = useState("");
 	const validateEmail = (value: string) =>
 		value.match(/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i);
+
+	useEffect(() => {
+		const token = localStorage.getItem("authToken");
+
+		if (token) {
+			const parsedToken = JSON.parse(token);
+			console.log(parsedToken);
+			router.push("/dashboard");
+		}
+	}, []);
 
 	const isInvalid = React.useMemo(() => {
 		if (inputEmail === "") return false;

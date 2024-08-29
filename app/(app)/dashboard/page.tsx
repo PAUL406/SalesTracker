@@ -1,6 +1,7 @@
 "use client";
 
 import { title } from "@/components/primitives";
+import SidebarComponent from "@/components/sidebar/sidebar";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
