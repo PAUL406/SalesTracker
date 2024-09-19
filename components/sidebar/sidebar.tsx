@@ -23,13 +23,8 @@ const SidebarComponent = () => {
 				</div>
 				<div className="flex flex-col justify-between h-full">
 					<div className={Sidebar.Body()}>
-						<SidebarItem
-							isActive={pathname === "/dashboard/sales"}
-							title="sales"
-							icon={<DevIcon />}
-							href="/sales"
-						/>
-						<SidebarItem isActive={pathname === "/developers"} title="Developers" icon={<DevIcon />} />
+						<SidebarItem isActive={pathname === "/sales"} title="sales" icon={<DevIcon />} href="/sales" />
+						<SidebarItem isActive={pathname === "/users"} title="Usuarios" icon={<DevIcon />} href="/users" />
 						<SidebarItem isActive={pathname === "/developers"} title="Developers" icon={<DevIcon />} />
 						<SidebarItem isActive={pathname === "/developers"} title="Developers" icon={<DevIcon />} />
 						<SidebarItem isActive={pathname === "/developers"} title="Developers" icon={<DevIcon />} />

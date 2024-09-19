@@ -27,10 +27,11 @@ export const Layout = ({ children }: Props) => {
 				setCollapsed: handleToggleSidebar,
 			}}
 		>
-			<section className="flex">
+			<section className="flex min-h-screen">
 				<SidebarComponent />
-
-				<div className="px-4">{children}</div>
+				<div className="flex-grow flex justify-center p-4">
+					<div className="w-full px-3 ">{children}</div>
+				</div>
 			</section>
 		</SidebarContext.Provider>
 	);

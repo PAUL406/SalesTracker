@@ -46,12 +46,7 @@ export default function Home() {
 		});
 
 		if (response.value) {
-			console.log(response);
-
 			localStorage.setItem("authToken", JSON.stringify(response));
-			let lol = localStorage.getItem("authToken");
-			console.log(lol);
-			console.log("asdasdasdasdasd");
 
 			// Redirigir al dashboard usando useRouter
 			router.push("/dashboard");
