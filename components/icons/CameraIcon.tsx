@@ -1,5 +1,5 @@
-import { IconSvgProps } from "../types";
-export const IconCamera = ({ fill = "currentColor", size, height, width, ...props }: IconSvgProps) => {
+import { IconSvgProps } from "./types";
+export const CameraIcon = ({ fill = "currentColor", size, height, width, ...props }: IconSvgProps) => {
 	return (
 		<svg
 			width={size || width || 24}

@@ -1,6 +1,6 @@
-import { IconSvgProps } from "../types";
+import { IconSvgProps } from "./types";
 
-export const IconUser = ({ fill = "currentColor", size, height, width, ...props }: IconSvgProps) => {
+export const UserIcon = ({ fill = "currentColor", size, height, width, ...props }: IconSvgProps) => {
 	return (
 		<svg
 			data-name="Iconly/Curved/Profile"

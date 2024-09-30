@@ -1,6 +1,6 @@
-import { IconSvgProps } from "../types";
+import { IconSvgProps } from "./types";
 
-export const IconMail = (props: IconSvgProps) => (
+export const MailIcon = (props: IconSvgProps) => (
 	<svg
 		aria-hidden="true"
 		fill="none"

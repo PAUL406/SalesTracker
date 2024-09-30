@@ -1,5 +1,5 @@
-import { IconSvgProps } from "../types";
-export const IconLock = (props: IconSvgProps) => (
+import { IconSvgProps } from "./types";
+export const LockIcon = (props: IconSvgProps) => (
 	<svg
 		aria-hidden="true"
 		fill="none"
